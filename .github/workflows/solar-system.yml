@@ -37,6 +37,8 @@
             name: Mocha-Test-Result
             path: test-results.xml
     docker:
+       permissions:    
+         packages: write
        runs-on: ubuntu-latest
        steps:
          - name: Checkout code
@@ -53,6 +55,7 @@
              context: .
              push: true
              tags: ghcr.io/${{ github.repository_owner }}/solar-system:${{ github.sha }}
+
 
 
 
