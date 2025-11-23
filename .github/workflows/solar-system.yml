@@ -58,7 +58,9 @@
            with:
              context: .
              push: true
-             tags: ghcr.io/kyawzawaungdevops/solar-system:latest
+             tags: ghcr.io/${{ github.actor }}/solar-system:${{ github.sha }}
+
+
 
 
 
