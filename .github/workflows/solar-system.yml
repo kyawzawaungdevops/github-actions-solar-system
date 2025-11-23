@@ -14,13 +14,11 @@
     unit-testing:
       name: Unit Testing
       runs-on: ubuntu-latest
+      container:
+         image: node:20
       steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
-        - name: Setup NodeJS Version
-          uses: actions/setup-node@v4
-          with:
-            node-version: 20
         - name: Install Dependencies
           run: npm install
         - name: Cache NPM dependencies
@@ -55,6 +53,7 @@
              context: .
              push: true
              tags: ghcr.io/${{ github.repository_owner }}/solar-system:${{ github.sha }}
+
 
 
 
